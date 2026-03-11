@@ -1,0 +1,114 @@
+# Digital Lock-In Girlfriend 👩‍❤️‍💋‍👨
+
+A web app that simulates a FaceTime call with a virtual girlfriend who yells at you for doom scrolling. Perfect for staying focused during study sessions!
+
+![Preview](https://img.shields.io/badge/Platform-Web-blue) ![Status](https://img.shields.io/badge/Status-MVP-green)
+
+## Features
+
+- 📹 **Video Call Interface** - Anime-style girlfriend character that reacts to your presence
+- 👀 **Face Detection** - Uses your webcam to monitor if you're looking at the screen
+- ⏱️ **Doom Scroll Timer** - Counts how long you've been staring (default: 10 seconds)
+- 🔥 **Scolding System** - Voice scolds you when you've been looking too long
+- 📴 **PWA Support** - Works offline after first load
+- 💕 **Cute Character** - Pure CSS animated anime girlfriend with expressions
+
+## How It Works
+
+1. Click **"Start Call"** to begin the session
+2. Grant camera permission when prompted
+3. The girlfriend will watch you through the camera
+4. If you stare at the screen for more than 10 seconds...
+5. She'll yell at you to get back to work!
+6. Look away to reset the timer
+
+## Tech Stack
+
+- **HTML5/CSS3/JavaScript** - Vanilla web technologies
+- **face-api.js** - Face detection in the browser
+- **Web Speech API** - Text-to-speech for scolding
+- **Service Worker** - PWA offline capabilities
+
+## Running Locally
+
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/digital-lock-in-girlfriend.git
+cd digital-lock-in-girlfriend
+```
+
+2. Start a local server (required for camera access):
+```bash
+# Using Python
+python -m http.server 8000
+
+# Using Node.js
+npx serve .
+
+# Using PHP
+php -S localhost:8000
+```
+
+3. Open http://localhost:8000 in your browser
+
+## Hosting on GitHub Pages
+
+1. Create a new repository on GitHub
+2. Push your code:
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/yourusername/repo-name.git
+git push -u origin main
+```
+
+3. Go to Settings → Pages → Deploy from main branch
+
+4. Your app will be live at `https://yourusername.github.io/repo-name/`
+
+## Permissions Required
+
+- **Camera** - For face detection to monitor if you're looking at the screen
+- **Microphone** - Not required (voice uses Web Speech API)
+
+## Browser Compatibility
+
+- Chrome/Edge 80+ (recommended)
+- Firefox 75+
+- Safari 14+ (may have limited face detection support)
+
+## Customization
+
+### Changing Scold Threshold
+Edit [`script.js`](script.js) and change:
+```javascript
+const CONFIG = {
+    SCOLD_THRESHOLD: 10,  // seconds before scolding
+    SCOLD_COOLDOWN: 15,   // seconds between scolds
+};
+```
+
+### Changing Scold Messages
+Edit [`animations.js`](animations.js):
+```javascript
+scoldMessages: [
+    "Hey! Get back to work!",
+    "Stop scrolling!",
+    // Add your own messages
+]
+```
+
+## Known Limitations
+
+- Face detection requires good lighting
+- Works best on laptop with webcam
+- Some browsers may block camera in iframes (use direct URL)
+
+## License
+
+MIT
+
+---
+
+Made with 💕 for productivity (and maybe a little bit of guilt tripping)
